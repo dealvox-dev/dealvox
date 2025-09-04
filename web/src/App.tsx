@@ -18,7 +18,7 @@ import {
   CheckCircle, 
   Settings, 
   LogOut, 
-  Menu, 
+  Menu,  
   X, 
   Bell, 
   Search, 
@@ -299,14 +299,15 @@ function ExcelUploader({ user }: { user: User }) {
         .replace(/[^a-z0-9]/g, '');
     };
 
-    // Mapeo de campos posibles a campos requeridos (incluyendo teléfono)
+    // Mapeo de campos posibles a campos requeridos
     const fieldMappings: { [key: string]: string[] } = {
+      'ID': ['id', 'identificador', 'numero', 'num'],
       'DNI': ['dni', 'documento', 'cedula', 'identificacion', 'nif', 'nie'],
-      'IBAN': ['iban', 'cuenta', 'cuentabancaria', 'numero', 'numerocuenta'],
-      'Dirección': ['direccion', 'direccion', 'domicilio', 'calle', 'direccioncompleta', 'domicilio'],
       'Nombre': ['nombre', 'name', 'cliente', 'razonsocial', 'empresa', 'titular'],
-      'CUPS': ['cups', 'codigocups', 'codigo', 'cups'],
-      'Teléfono': ['telefono', 'phone', 'movil', 'celular', 'contacto', 'numero', 'tlf']
+      'CP': ['cp', 'codigopostal', 'postal', 'zip', 'codigo'],
+      'Dirección': ['street', 'direccion', 'direccion', 'domicilio', 'calle', 'direccioncompleta', 'domicilio'],
+      'Empresa': ['actual_company', 'empresa', 'company', 'compania', 'sociedad'],
+      'Teléfono': ['phone', 'telefono', 'movil', 'celular', 'contacto', 'numero', 'tlf']
     };
 
     if (rawData.length === 0) {
@@ -511,7 +512,7 @@ function ExcelUploader({ user }: { user: User }) {
         row.Nombre || '',                // C: name
         row.CP || '',                    // D: cp
         row.Dirección || '',             // E: street
-        row.CUPS || '',                  // F: actual_company (usando CUPS como actual_company)
+        row.Empresa || '',               // F: actual_company
         row.Teléfono || '',              // G: teléfono
         ''                               // H: phone (vacío)
       ]);
@@ -1568,12 +1569,12 @@ function NotificationDropdown({
     <>
       {/* Overlay */}
       <div 
-        className="fixed inset-0 z-[99999]" 
+        className="fixed inset-0 z-[999998]" 
         onClick={onClose}
       ></div>
       
       {/* Dropdown */}
-      <div className="absolute right-0 top-full mt-2 w-80 max-w-[calc(100vw-2rem)] bg-steel-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-steel-700/50 z-[99999]">
+      <div className="absolute right-0 top-full mt-2 w-80 max-w-[calc(100vw-2rem)] bg-steel-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-steel-700/50 z-[999999]">
         <div className="p-4 border-b border-steel-700/50">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-steel-100">Notificaciones</h3>
