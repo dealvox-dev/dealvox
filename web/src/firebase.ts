@@ -12,7 +12,7 @@ const firebaseConfig = {
   measurementId: "G-263625S65C"
 };
 
-console.log("Firebase config", firebaseConfig); // debug
+console.log("Firebase config", firebaseConfig); // debug - updated
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
