@@ -3,12 +3,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FB_API_KEY,
-  authDomain: import.meta.env.VITE_FB_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FB_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FB_STORAGE,
-  messagingSenderId: import.meta.env.VITE_FB_MSG,
-  appId: import.meta.env.VITE_FB_APP_ID,
+  apiKey: "AIzaSyBIXaEXayeQNiYniOhI-f2DJvdLSetVH0s",
+  authDomain: "dealvox-256d2.firebaseapp.com",
+  projectId: "dealvox-256d2",
+  storageBucket: "dealvox-256d2.firebasestorage.app",
+  messagingSenderId: "556311536192",
+  appId: "1:556311536192:web:e968a6eca264b6df8575a5",
+  measurementId: "G-263625S65C"
 };
 
 console.log("Firebase config", firebaseConfig); // debug
