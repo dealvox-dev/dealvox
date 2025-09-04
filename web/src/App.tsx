@@ -12,7 +12,6 @@ import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import * as XLSX from 'xlsx';
 import { GOOGLE_SHEETS_CONFIG, N8N_CONFIG } from './config';
 import { KJUR } from 'jsrsasign';
-import { createPortal } from 'react-dom';
 import { 
   BarChart3, 
   Phone, 
@@ -1565,7 +1564,7 @@ function NotificationDropdown({
 }) {
   if (!show) return null;
 
-  return createPortal(
+  return (
     <>
       {/* Overlay */}
       <div 
@@ -1574,7 +1573,7 @@ function NotificationDropdown({
       ></div>
       
       {/* Dropdown */}
-      <div className="absolute right-0 top-full mt-2 w-80 max-w-[calc(100vw-2rem)] bg-steel-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-steel-700/50 z-[99999] transform -translate-x-0 sm:translate-x-0">
+      <div className="absolute right-0 top-full mt-2 w-80 max-w-[calc(100vw-2rem)] bg-steel-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-steel-700/50 z-[99999]">
         <div className="p-4 border-b border-steel-700/50">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-steel-100">Notificaciones</h3>
@@ -1623,8 +1622,7 @@ function NotificationDropdown({
           </button>
         </div>
       </div>
-    </>,
-    document.body
+    </>
   );
 }
 
