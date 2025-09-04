@@ -772,7 +772,7 @@ function ExcelUploader({ user }: { user: User }) {
                 <strong className="text-gray-100">Duplicados eliminados:</strong> {parsingInfo.duplicatesRemoved || 0}
               </p>
               <p className="text-gray-300 mb-2">
-                <strong className="text-gray-100">Campos encontrados:</strong> {parsingInfo.foundFields.length} de 6
+                <strong className="text-gray-100">Campos encontrados:</strong> {parsingInfo.foundFields.length} de 7
               </p>
             </div>
             <div>
@@ -1569,12 +1569,12 @@ function NotificationDropdown({
     <>
       {/* Overlay */}
       <div 
-        className="fixed inset-0 z-[999998]" 
+        className="fixed inset-0 z-[9999998]" 
         onClick={onClose}
       ></div>
       
       {/* Dropdown */}
-      <div className="absolute right-0 top-full mt-2 w-80 max-w-[calc(100vw-2rem)] bg-steel-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-steel-700/50 z-[999999]">
+      <div className="absolute right-0 top-full mt-2 w-80 max-w-[calc(100vw-2rem)] bg-steel-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-steel-700/50 z-[9999999]">
         <div className="p-4 border-b border-steel-700/50">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-steel-100">Notificaciones</h3>
@@ -1767,7 +1767,7 @@ function Dashboard({ user }: { user: User }) {
             </div>
             
             <div className="flex items-center space-x-6">
-              <div className="relative z-[99998]">
+              <div className="relative z-[9999997]">
                 <button 
                   onClick={() => setShowNotifications(!showNotifications)}
                   className="p-3 rounded-xl hover:bg-steel-700/50 relative transition-colors"
