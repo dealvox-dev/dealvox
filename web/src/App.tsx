@@ -1819,7 +1819,7 @@ function Dashboard({ user }: { user: User }) {
                 DealVox - Centro de Llamadas
               </h1>
               <p className="text-lg text-steel-400 font-medium max-w-2xl mx-auto">
-                Transforma tus cold calls en conversaciones de calidad. Automatiza, optimiza y convierte más prospects con inteligencia artificial
+                🚀 Convierte más leads con llamadas inteligentes. Automatiza tu proceso de ventas y aumenta tu tasa de conversión hasta un 300%
           </p>
         </div>
 
