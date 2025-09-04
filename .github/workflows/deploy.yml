@@ -32,19 +32,11 @@ jobs:
         npm run build
         
     - name: Deploy to Hostinger via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: web/dist/
-        server-dir: public_html/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.env
-          **/.env.*
-        include: |
-          **/.htaccess
-        log-level: verbose
+        local_path: './web/dist/*'
+        remote_path: '/public_html/'
+        port: 21

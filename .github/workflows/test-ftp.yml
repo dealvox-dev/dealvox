@@ -1,0 +1,27 @@
+name: Test FTP Connection
+
+on:
+  workflow_dispatch: # Permite ejecutar manualmente
+
+jobs:
+  test-ftp:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Test FTP Connection
+      run: |
+        echo "Testing FTP connection..."
+        echo "Server: ${{ secrets.FTP_SERVER }}"
+        echo "Username: ${{ secrets.FTP_USERNAME }}"
+        echo "Password: [HIDDEN]"
+        
+        # Crear un archivo de prueba
+        echo "Test file from GitHub Actions" > test.txt
+        
+        # Probar conexión FTP básica
+        ftp -n ${{ secrets.FTP_SERVER }} << EOF
+        user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
+        pwd
+        ls
+        quit
+        EOF
