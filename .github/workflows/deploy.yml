@@ -31,6 +31,13 @@ jobs:
         cd web
         npm run build
         
+    - name: List files to deploy
+      run: |
+        echo "Files in web/dist/:"
+        ls -la web/dist/
+        echo "Files in web/dist/assets/:"
+        ls -la web/dist/assets/
+        
     - name: Deploy to Hostinger via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -38,7 +45,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: web/dist/
-        server-dir: public_html/
+        server-dir: /
         exclude: |
           **/.git*
           **/.git*/**
