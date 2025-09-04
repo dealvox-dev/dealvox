@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { createPortal } from 'react-dom';
 import { auth, db } from "./firebase";
 import {
   onAuthStateChanged,
@@ -1565,16 +1566,20 @@ function NotificationDropdown({
 }) {
   if (!show) return null;
 
-  return (
+  return createPortal(
     <>
       {/* Overlay */}
       <div 
-        className="fixed inset-0 z-[9999998]" 
+        className="fixed inset-0 bg-black/20" 
         onClick={onClose}
+        style={{ zIndex: 2147483647 }}
       ></div>
       
       {/* Dropdown */}
-      <div className="fixed top-20 right-8 w-80 max-w-[calc(100vw-2rem)] bg-steel-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-steel-700/50 z-[9999999]">
+      <div 
+        className="fixed top-20 right-8 w-80 max-w-[calc(100vw-2rem)] bg-steel-800/95 backdrop-blur-xl rounded-xl shadow-2xl border border-steel-700/50"
+        style={{ zIndex: 2147483647 }}
+      >
         <div className="p-4 border-b border-steel-700/50">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-steel-100">Notificaciones</h3>
@@ -1623,7 +1628,8 @@ function NotificationDropdown({
           </button>
         </div>
       </div>
-    </>
+    </>,
+    document.body
   );
 }
 
