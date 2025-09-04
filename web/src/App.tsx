@@ -1819,7 +1819,7 @@ function Dashboard({ user }: { user: User }) {
                 DealVox - Centro de Llamadas
               </h1>
               <p className="text-lg text-steel-400 font-medium max-w-2xl mx-auto">
-                🚀 Convierte más leads con llamadas inteligentes. Automatiza tu proceso de ventas y aumenta tu tasa de conversión hasta un 300%
+                🚀 Convierte más leads con llamadas inteligentes. Automatiza tu proceso de ventas y aumenta tu tasa de conversión hasta un 300% - Deployment funcionando correctamente
           </p>
         </div>
 
