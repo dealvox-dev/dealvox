@@ -1,0 +1,20 @@
+{
+  "name": "dealvox",
+  "version": "1.0.0",
+  "description": "DealVox - Cold Lead AI Application",
+  "scripts": {
+    "build": "cd web && npm run build",
+    "deploy": "node deploy.js",
+    "deploy:ps": "powershell -ExecutionPolicy Bypass -File deploy.ps1",
+    "dev": "cd web && npm run dev",
+    "install:web": "cd web && npm install",
+    "install:all": "npm install && cd web && npm install"
+  },
+  "dependencies": {
+    "googleapis": "^159.0.0",
+    "basic-ftp": "^5.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}
