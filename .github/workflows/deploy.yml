@@ -59,3 +59,4 @@ jobs:
           **/.htaccess
         log-level: verbose
         dry-run: false
+        state-name: deploy-state
